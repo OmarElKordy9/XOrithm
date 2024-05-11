@@ -22,15 +22,13 @@ const Login = () => {
 
   async function googleSignIn() {
     signIn("google", {
-      callbackUrl:
-        "https://x-orithm-hk63mq0rx-omar-elkordys-projects.vercel.app",
+      callbackUrl: "http://localhost:3000",
     });
   }
 
   async function githubSignIn() {
     signIn("github", {
-      callbackUrl:
-        "https://x-orithm-hk63mq0rx-omar-elkordys-projects.vercel.app",
+      callbackUrl: "http://localhost:3000",
     });
   }
   const [show, setShow] = useState(false);
