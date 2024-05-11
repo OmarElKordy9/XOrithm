@@ -20,31 +20,28 @@ const Login = () => {
     // onSubmit,
   });
 
-  // async function onSubmit(values) {
-  //   const status = await signIn("credentials", {
-  //     redirect: false,
-  //     email: values.email,
-  //     password: values.password,
-  //     callbackUrl: "/",
-  //   });
-
-  //   if (status.ok) router.push(status.url);
-  // }
-
   async function googleSignIn() {
-    signIn("google", { callbackUrl: "http://localhost:3000" });
+    signIn("google", {
+      callbackUrl:
+        "https://x-orithm-hk63mq0rx-omar-elkordys-projects.vercel.app",
+    });
   }
 
   async function githubSignIn() {
-    signIn("github", { callbackUrl: "http://localhost:3000" });
+    signIn("github", {
+      callbackUrl:
+        "https://x-orithm-hk63mq0rx-omar-elkordys-projects.vercel.app",
+    });
   }
   const [show, setShow] = useState(false);
   return (
     <div className="flex h-screen bg-blue-400">
-      <div className="m-auto bg-slate-50 rounded-md w-3/5 ">
-        <section className="w-1/2 mx-auto flex flex-col gap-10 backdrop-blur-lg justify-evenly py-10 text-center">
+      <div className="m-auto bg-slate-50 rounded-md lg:w-3/5 w-5/6">
+        <section className="lg:w-1/2 md:w-2/3 w-5/6 mx-auto flex flex-col gap-10 backdrop-blur-lg justify-evenly py-10 text-center">
           <div className="title">
-            <h1 className="text-gray-800 text-4xl font-bold py-4">Login</h1>
+            <h1 className="text-gray-800 md:text-4xl text-2xl font-bold py-4">
+              Login
+            </h1>
           </div>
 
           {/* form */}
@@ -60,7 +57,7 @@ const Login = () => {
                 type="email"
                 name="email"
                 placeholder="Email"
-                className="w-full py-4 px-6 border rounded-xl bg-slate-50 outline-none border-none"
+                className="w-full md:py-4 py-1 md:px-6 px-2 border rounded-xl bg-slate-50 outline-none border-none"
                 onChange={(e) => setEmail(e.target.value)}
                 // {...formik.getFieldProps("email")}
               />
@@ -86,7 +83,7 @@ const Login = () => {
                 type={`${show ? "text" : "password"}`}
                 name="password"
                 placeholder="Password"
-                className="w-full py-4 px-6 border rounded-xl bg-slate-50 outline-none border-none"
+                className="w-full md:py-4 py-1 md:px-6 px-2 border rounded-xl bg-slate-50 outline-none border-none"
                 onChange={(e) => setPassword(e.target.value)}
                 // {...formik.getFieldProps("password")}
               />
@@ -117,7 +114,7 @@ const Login = () => {
                 }
                 disabled={!email || !password}
                 type="button"
-                className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-md py-3 text-gray-50 text-lg transition-colors duration-300 hover:from-gray-50 hover:to-gray-100 hover:border-blue-500 hover:text-gray-700 hover:border"
+                className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-md md:py-3 py-2 text-gray-50 text-lg transition-colors duration-300 hover:from-gray-50 hover:to-gray-100 hover:border-blue-500 hover:text-gray-700 hover:border"
               >
                 Login
               </button>
@@ -125,7 +122,7 @@ const Login = () => {
             <div className="input-button">
               <button
                 type="button"
-                className="w-full border py-3 flex justify-center gap-2 hover:bg-gray-200"
+                className="w-full border md:py-3 py-1 flex justify-center gap-2 hover:bg-gray-200"
                 onClick={googleSignIn}
               >
                 Sign In with Google{" "}
@@ -135,7 +132,7 @@ const Login = () => {
             <div className="input-button">
               <button
                 type="button"
-                className="w-full border py-3 flex justify-center gap-2 hover:bg-gray-200"
+                className="w-full border md:py-3 py-1 flex justify-center gap-2 hover:bg-gray-200"
                 onClick={githubSignIn}
               >
                 Sign In with Github{" "}

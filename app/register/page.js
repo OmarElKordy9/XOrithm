@@ -37,10 +37,12 @@ export default function Register() {
   });
   return (
     <div className="flex h-screen bg-blue-400">
-      <div className="m-auto bg-slate-50 rounded-md w-3/5 h-3/4">
-        <section className="w-1/2 mx-auto flex flex-col gap-10 backdrop-blur-lg justify-evenly py-10 text-center">
+      <div className="m-auto bg-slate-50 rounded-md lg:w-3/5 w-5/6">
+        <section className="lg:w-1/2 md:w-2/3 w-5/6 mx-auto flex flex-col gap-10 backdrop-blur-lg justify-evenly py-10 text-center">
           <div className="title">
-            <h1 className="text-gray-800 text-4xl font-bold py-4">Register</h1>
+            <h1 className="text-gray-800 md:text-4xl text-2xl font-bold py-4">
+              Register
+            </h1>
           </div>
 
           {/* form */}
@@ -56,7 +58,7 @@ export default function Register() {
                 type="email"
                 name="email"
                 placeholder="Email"
-                className="w-full py-4 px-6 border rounded-xl bg-slate-50 outline-none border-none"
+                className="w-full md:py-4 py-1 md:px-6 px-2 border rounded-xl bg-slate-50 outline-none border-none"
                 onChange={(e) => setEmail(e.target.value)}
                 // {...formik.getFieldProps("email")}
               />
@@ -82,7 +84,7 @@ export default function Register() {
                 type={`${show.password ? "text" : "password"}`}
                 name="password"
                 placeholder="Password"
-                className="w-full py-4 px-6 border rounded-xl bg-slate-50 outline-none border-none"
+                className="w-full md:py-4 py-1 md:px-6 px-2 border rounded-xl bg-slate-50 outline-none border-none"
                 onChange={(e) => setPassword(e.target.value)}
                 // {...formik.getFieldProps("password")}
               />
@@ -112,7 +114,7 @@ export default function Register() {
                 type={`${show.cpassword ? "text" : "password"}`}
                 name="cpassword"
                 placeholder="Confirm Password"
-                className="w-full py-4 px-6 border rounded-xl bg-slate-50 outline-none border-none"
+                className="w-full md:py-4 py-1 md:px-6 px-2 border rounded-xl bg-slate-50 outline-none border-none"
                 onChange={(e) => setPasswordAgain(e.target.value)}
                 // {...formik.getFieldProps("cpassword")}
               />
@@ -141,7 +143,7 @@ export default function Register() {
                   password !== passwordAgain
                 }
                 onClick={() => signup()}
-                className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-md py-3 text-gray-50 text-lg transition-colors duration-300 hover:from-gray-50 hover:to-gray-100 hover:border-blue-500 hover:text-gray-700 hover:border cursor-pointer"
+                className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-md md:py-3 py-2 text-gray-50 text-lg transition-colors duration-300 hover:from-gray-50 hover:to-gray-100 hover:border-blue-500 hover:text-gray-700 hover:border"
               >
                 Sign Up
               </button>
