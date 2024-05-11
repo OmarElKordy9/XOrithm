@@ -22,13 +22,13 @@ const Login = () => {
 
   async function googleSignIn() {
     signIn("google", {
-      callbackUrl: "http://localhost:3000",
+      callbackUrl: "https://xorithm.netlify.app",
     });
   }
 
   async function githubSignIn() {
     signIn("github", {
-      callbackUrl: "http://localhost:3000",
+      callbackUrl: "https://xorithm.netlify.app",
     });
   }
   const [show, setShow] = useState(false);
