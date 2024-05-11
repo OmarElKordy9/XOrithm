@@ -45,7 +45,7 @@ export default function Home() {
     <div>
       {session ? (
         <h1 className=" font-Audiowide text-center text-black text-xl md:text-3xl lg:text-5xl md:mb-10 md:my-10 my-5">
-          {session.user?.email}'s Dashboard
+          {`${session.user?.email}'s Dashboard`}
         </h1>
       ) : (
         <h1 className=" font-Audiowide text-center text-black text-xl md:text-3xl lg:text-5xl md:mb-10">
