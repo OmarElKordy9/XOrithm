@@ -79,11 +79,14 @@ const Navbar = () => {
               </a>
             </li>
           ))}
-          <a href="/contact">
-            <button className="btn rounded-md bg-black px-5 py-1 mt-4 font-body text-white inline-block md:hidden">
-              Let's Talk
-            </button>
-          </a>
+          <button
+            onClick={() => {
+              signOut({ callbackUrl: "/login" });
+            }}
+            className="btn rounded-md bg-black px-5 py-1 font-body text-white hidden md:inline-block"
+          >
+            Sign Out
+          </button>
         </ul>
         <button
           onClick={() => {
