@@ -146,7 +146,7 @@ const Login = () => {
 
           {/* bottom */}
           <p className="text-center text-gray-400 ">
-            Don't have an account yet?{" "}
+            {`Don't have an account yet? `}
             <a href="register" className="text-blue-700">
               Sign Up
             </a>
