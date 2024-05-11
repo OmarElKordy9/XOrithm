@@ -69,8 +69,11 @@ const Navbar = () => {
             open ? "top-12 justify-center items-center" : "top-[-490px]"
           }`}
         >
-          {Links.map((link) => (
-            <li className="md:ml-8 md:my-0  flex md:text-lg text-sm justify-center gap-4 mt-3 font-body ">
+          {Links.map((link, index) => (
+            <li
+              key={index}
+              className="md:ml-8 md:my-0  flex md:text-lg text-sm justify-center gap-4 mt-3 font-body "
+            >
               <a
                 href={link.link}
                 className=" text-secondary hover:text-tertiary duration-500"
@@ -79,11 +82,12 @@ const Navbar = () => {
               </a>
             </li>
           ))}
+
           <button
             onClick={() => {
               signOut({ callbackUrl: "/login" });
             }}
-            className="btn rounded-md bg-black px-5 py-1 font-body text-white hidden md:inline-block"
+            className=" btn rounded-md bg-black px-5 py-1 mt-4 font-body text-white inline-block md:hidden"
           >
             Sign Out
           </button>
