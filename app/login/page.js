@@ -3,21 +3,24 @@
 import Image from "next/image";
 import { HiAtSymbol, HiFingerPrint } from "react-icons/hi";
 import { useState } from "react";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { signIn } from "next-auth/react";
 import { useFormik } from "formik";
-import { useRouter } from "next/router";
 import login_validate from "../../lib/validate";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
     validate: login_validate,
-    // onSubmit,
+    onSubmit: async (values) => {
+      await signIn("credentials", {
+        ...values,
+        redirect: true,
+        callbackUrl: "/",
+      });
+    },
   });
 
   async function googleSignIn() {
@@ -43,7 +46,7 @@ const Login = () => {
           </div>
 
           {/* form */}
-          <form className="flex flex-col gap-5">
+          <form className="flex flex-col gap-5" onSubmit={formik.handleSubmit}>
             <div
               className={`flex border rounded-xl relative ${
                 formik.errors.email && formik.touched.email
@@ -56,8 +59,7 @@ const Login = () => {
                 name="email"
                 placeholder="Email"
                 className="w-full md:py-4 py-1 md:px-6 px-2 border rounded-xl bg-slate-50 outline-none border-none"
-                onChange={(e) => setEmail(e.target.value)}
-                // {...formik.getFieldProps("email")}
+                {...formik.getFieldProps("email")}
               />
               {formik.errors.email && formik.touched.email ? (
                 <span className="text-rose-500 text-xs my-auto">
@@ -82,8 +84,7 @@ const Login = () => {
                 name="password"
                 placeholder="Password"
                 className="w-full md:py-4 py-1 md:px-6 px-2 border rounded-xl bg-slate-50 outline-none border-none"
-                onChange={(e) => setPassword(e.target.value)}
-                // {...formik.getFieldProps("password")}
+                {...formik.getFieldProps("password")}
               />
               {formik.errors.password && formik.touched.password ? (
                 <span className="text-rose-500 text-xs my-auto">
@@ -102,16 +103,8 @@ const Login = () => {
 
             <div className="input-button">
               <button
-                onClick={() =>
-                  signIn("credentials", {
-                    email,
-                    password,
-                    redirect: true,
-                    callbackUrl: "/",
-                  })
-                }
-                disabled={!email || !password}
-                type="button"
+                type="submit"
+                disabled={!formik.isValid || formik.isSubmitting}
                 className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-md md:py-3 py-2 text-gray-50 text-lg transition-colors duration-300 hover:from-gray-50 hover:to-gray-100 hover:border-blue-500 hover:text-gray-700 hover:border"
               >
                 Login
@@ -139,7 +132,6 @@ const Login = () => {
             </div>
           </form>
 
-          {/* bottom */}
           <p className="text-center text-gray-400 ">
             {`Don't have an account yet? `}
             <a href="register" className="text-blue-700">

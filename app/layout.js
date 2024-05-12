@@ -5,7 +5,6 @@ import SessionWrapper from "./Components/SessionWrapper";
 import { authOptions } from "@/lib/authOptions";
 import { getServerSession } from "next-auth";
 import Login from "./login/page";
-import Home from "./page";
 import Register from "./register/page";
 import { headers } from "next/headers";
 

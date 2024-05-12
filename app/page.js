@@ -1,12 +1,10 @@
 "use client";
 
 import { get, ref } from "firebase/database";
-import { getServerSession } from "next-auth/next";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Navbar from "./Components/Navbar";
 import { database } from "./firebaseConfig";
-import { getSession, useSession, signOut } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import Modal from "./Components/Modal";
 
 export default function Home() {
