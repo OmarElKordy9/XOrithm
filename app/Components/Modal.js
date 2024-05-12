@@ -24,7 +24,7 @@ const Modal = ({ onClose, children }) => {
         className="bg-white p-8 rounded-md shadow-md relative"
       >
         <button
-          className="absolute top-10 right-5 text-gray-600 hover:text-gray-800 transition-transform duration-500 hover:scale-110"
+          className="absolute top-5 right-5 text-gray-600 hover:text-gray-800 transition-transform duration-500 hover:scale-110"
           onClick={onClose}
         >
           <svg
