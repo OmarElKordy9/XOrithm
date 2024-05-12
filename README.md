@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div id="top"></div>
 
+
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+
+  <h3 align="center">XOrithm THA</h3>
+
+  <p align="center">
+    THA From XOrithm for a dashboard for servers web app using Next.js
+    <br />
+    <br />
+  </p>
+</div>
+
+
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#ProjectDescription">Project Description</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#contributers">Contributers</a></li>
+  </ol>
+</details>
+
+
+
+<!-- PROJECT DESCRIPTION -->
+## Project Description
+
+
+This Project is a THA for XOrithm.
+
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+### Built With
+
+The project was built using:
+
+* [Next.js]
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- GETTING STARTED -->
 ## Getting Started
 
-First, run the development server:
+To run the application you can run it locally in your computer.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+This will tell you how to install the code and run the application in your computer locally.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Clone the repo or download the code in a zip file.
+   ```sh
+   git clone https://github.com/OmarElKordy9/XOrithm
+   ```
+2. Then you need to open the terminal.
+3. Then in the terminal you should run this command first.
+   ```sh
+   npm install
+   ```
+4. Then you should run the file with the command.
+   ```sh
+   npm run dev
+   ```
+5. The browser should open to your localhost with the project and you should be able to use the project.
+6. NOTE: you want be able to sign in or sign up using localhost
+7. IF you want to see all the features of the website you can visit https://xorithm.netlify.app
 
-## Learn More
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<!-- Contributers -->
+## Contributers
+<span id="contributers"></span>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Omar ElKordy
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<p align="right">(<a href="#top">back to top</a>)</p>
